@@ -1,3 +1,4 @@
+// 两个元素逐个对比看是否存在 
 type MyExclude<T, U> = T extends U ? never : T
 
 
