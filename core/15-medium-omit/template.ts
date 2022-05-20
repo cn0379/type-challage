@@ -14,3 +14,20 @@ interface test1 {
 type test2 = MyExclude<keyof test1, 'a'>
 
 type test3 = MyPick<test1, 'a' | 'b' | 'c'>
+
+interface Todo {
+    title: string
+    description: string
+    completed: boolean
+  }
+  
+  interface Expected1 {
+    title: string
+    completed: boolean
+  }
+  
+  interface Expected2 {
+    title: string
+  }
+
+  type aa = MyOmit<Todo,'completed'>
