@@ -72,3 +72,20 @@ class User {
 type UserType = keyof User  //username | age
 
 let userValue: UserType = 'username' //通过
+
+// ********************************************
+
+// infer
+interface Customer {
+    custname: string
+    buymoney: number
+}
+
+// 需求：获取custFuncType的参数类型
+type custFuncType = (cust: Customer) => string
+
+// 实现：
+type inferType<T> = T extends (parmas: infer P) => any ? P : T
+
+type inferReusltType = inferType<custFuncType>  //Customer类型
+
