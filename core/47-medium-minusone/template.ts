@@ -19,3 +19,4 @@ type DigitToArray = {
   type MinusOne<T extends number> = CreateArrayByLength<`${T}`> extends [infer First, ...infer Rest]
   ? Rest["length"]
   : never;
+
