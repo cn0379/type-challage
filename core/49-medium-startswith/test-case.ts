@@ -6,4 +6,4 @@ type cases = [
   Expect<Equal<StartsWith<'abc', 'abcd'>, false>>,
   Expect<Equal<StartsWith<'abc', ''>, true>>,
   Expect<Equal<StartsWith<'abc', ' '>, false>>,
-]
+]  
