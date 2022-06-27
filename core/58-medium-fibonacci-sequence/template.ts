@@ -1,2 +1,6 @@
-type MyReverse<T> = T extends [infer A, ...infer B] ? [...MyReverse<B>, A] : []
-type FlipArguments<T> = T extends (...args: infer A) => infer R ? (...args: MyReverse<A>) => R : never
+type Fibonacci<T extends number,
+    CurrentIndex extends any[] = [1],
+    Prev extends any[] = [],
+    Current extends any[] = [1]> = CurrentIndex['length'] extends T
+    ? Current['length']
+    : Fibonacci<T, [...CurrentIndex, 1], Current, [...Prev, ...Current]>
